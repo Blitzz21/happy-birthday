@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { left: 200, top: 30 },     // Right side lower
         { left: 165, top: 40 },     // Bottom right curve
         { left: 125, top: 45 },     // Bottom center - on cake bottom
-        { left: 80, top: 40 },      // Bottom left curve
+        { left: 85, top: 40 },      // Bottom left curve
         { left: 50, top: 30 },      // Left side lower
         { left: 35, top: 5 },      // Left side upper
         { left: 70, top: -10 },       // Top left curve

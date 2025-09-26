@@ -1,11 +1,13 @@
 body {
   background-color: #ffe5ec;
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
 }
 
 .candle-count-display {
   text-align: center;
   margin-top: 150px;
-  margin-bottom: 20px;
   font-family: 'Arial', sans-serif;
   font-size: 30px;
   font-weight: bold;
@@ -22,8 +24,7 @@ body {
 
 .candle-count-display-1 {
   text-align: center;
-  margin-top: 450px;
-  margin-bottom: 20px;
+  margin-top: -100px;
   font-family: 'Arial', sans-serif;
   font-size: 30px;
   font-weight: bold;
@@ -49,7 +50,7 @@ body {
 }
 
 .cake {
-  position: absolute;
+  position: relative;
   width: 250px;
   height: 200px;
   top: 50%;
