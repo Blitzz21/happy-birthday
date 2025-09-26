@@ -92,8 +92,9 @@ document.addEventListener("DOMContentLoaded", function () {
         updateCandleCount();
       }
 
-      // If all candles are blown out, trigger confetti after a small delay
+
       if (candles.every((candle) => candle.classList.contains("out"))) {
+        document.querySelector('.candle-count-display-1').textContent = "Click here to open your gift";
         setTimeout(function() {
           triggerConfetti();
           endlessConfetti(); // Start the endless confetti
@@ -144,3 +145,17 @@ function endlessConfetti() {
     });
   }, 1000);
 }
+
+const text = document.querySelector('.candle-count-display-1');
+const popup = document.querySelector('.pop-up');
+
+text.addEventListener('click', () => {
+  popup.style.display = "flex";
+});
+
+popup.addEventListener('click', () => {
+  popup.style.display = "none";
+  } 
+);
+
+
