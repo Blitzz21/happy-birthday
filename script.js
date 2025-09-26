@@ -61,18 +61,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Add click handler to blow out all candles and start celebration
   const headerText = document.querySelector('.candle-count-display-1');
+  let celebrationStarted = false;
+  let endlessConfettiStarted = false;
   if (headerText) {
     headerText.addEventListener('click', function () {
       if (candles.length === 0) return;
-      candles.forEach((candle) => {
-        if (!candle.classList.contains('out')) {
-          candle.classList.add('out');
+
+      const allAlreadyOut = candles.every((candle) => candle.classList.contains('out'));
+
+      if (!allAlreadyOut) {
+        candles.forEach((candle) => {
+          if (!candle.classList.contains('out')) {
+            candle.classList.add('out');
+          }
+        });
+        updateCandleCount();
+
+        // Start celebration only once
+        if (!celebrationStarted) {
+          triggerConfetti();
+          if (!endlessConfettiStarted) {
+            endlessConfetti();
+            endlessConfettiStarted = true;
+          }
+          audio.play();
+          celebrationStarted = true;
         }
-      });
-      updateCandleCount();
-      triggerConfetti();
-      endlessConfetti();
-      audio.play();
+
+        headerText.textContent = 'Press for more confetti 🥳';
+      } else {
+        // Candles already out: more confetti on demand
+        headerText.textContent = 'Press for more confetti 🥳';
+        triggerConfetti();
+      }
     });
   }
 
