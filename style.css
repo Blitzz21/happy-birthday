@@ -148,7 +148,7 @@ body {
 }
 
 .candle {
-  background-color: #7B020B;
+  background-color: #ff6973;
   width: 12px;
   height: 35px;
   border-radius: 6px/3px;
@@ -165,7 +165,7 @@ body {
   width: 12px;
   height: 6px;
   border-radius: 50%;
-  background-color: #ad030f;
+  background-color: #e2666e;
   z-index: 10;
 }
 
